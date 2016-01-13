@@ -1,0 +1,43 @@
+Calories Justa Backend 
+
+Backend part of the coding assigment for Justa.
+
+1. Description
+The backend is on Ruby on Rails, it provides a Rest API to perform the registration of an user, login and save meals with calories. The login is based on Devise but edited so it can offer the user as well to save one call.
+
+The tests were written using Rspec, to run them simply use:
+
+bundle exec rspec spec/
+
+2. Build
+Mysql database is set by default, please config settings in the database.yml file
+
+Simply run
+  bundle install
+  rake db:create
+  rake db:migrate
+  rails s
+
+3. Endpoints
+  A.Users
+    Create user:         POST   /api/v1/users(.:format)        
+    Get user:            GET    /api/v1/users/:id(.:format)    
+    Update user:         PATCH  /api/v1/users/:id(.:format)    
+                         or
+                         PUT    /api/v1/users/:id(.:format)    
+    Delete user:         DELETE /api/v1/users/:id(.:format)    
+
+  B. Authentication  
+    Login:               POST   /api/v1/sessions(.:format)     
+    Logout:              DELETE /api/v1/sessions/:id(.:format) 
+  
+  C. Meals
+    Get/Search meals:    GET    /api/v1/meals(.:format)        
+    Create a meal:       POST   /api/v1/meals(.:format)        
+    Get a meal:          GET    /api/v1/meals/:id(.:format)    
+    Edit a meal          PATCH  /api/v1/meals/:id(.:format)    
+                         or
+                         PUT    /api/v1/meals/:id(.:format)    
+    Delete a meal:       DELETE /api/v1/meals/:id(.:format)    
+
+
